@@ -77,6 +77,25 @@ img {
 .header__menu-link:hover {
   color: #ffc87a;
 }
+.header__mobile {
+  display: none;
+}
+
+.nav__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: none;
+  animation: fadeIn linear 0.2s;
+}
+
+.category__mobile-icon {
+  color: #fff;
+}
 
 .logo {
   font-size: 2.5rem;
@@ -443,6 +462,64 @@ img {
 @media screen and (max-width: 1023px) {
   .hide-on-mobile-tablet {
     display: none !important;
+  }
+
+  .nav__input:checked ~ .nav__overlay {
+    display: block;
+  }
+
+  .nav__input:checked ~ .header__menu-list {
+    transform: translateX(0%);
+    opacity: 1;
+    z-index: 22;
+  }
+
+  .header__mobile {
+    display: block;
+    width: 100%;
+    color: #000;
+    font-size: 4rem;
+  }
+  .header__mobile-menu {
+    cursor: pointer;
+  }
+  .header__menu-list {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 100%;
+    transform: translateX(calc(-100% - 46px));
+    transition: transform linear 0.3s, opacity linear 0.3s;
+    opacity: 1;
+    will-change: opacity, transform;
+    display: block !important;
+    background-color: #fff;
+    padding-top: 30px;
+  }
+  .header__menu-item {
+    padding: 1rem 0;
+  }
+  .header__menu-link {
+    font-size: 2rem;
+  }
+
+  .category__mobile-icon {
+    cursor: pointer;
+    text-align: center;
+    height: 45px;
+    font-size: 2.2rem;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: -45px;
+    display: block;
+    background-color: #fff;
+    line-height: 45px;
+    margin-bottom: 0;
+    width: 45px;
   }
 
   .banner {
