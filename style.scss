@@ -24,6 +24,15 @@ img {
   display: block;
   max-width: 100%;
 }
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @mixin flexbox($align: flex-start, $justify: flex-start, $wrap: nowrap, $dir: row) {
   display: flex;
   justify-content: $justify;
@@ -415,6 +424,9 @@ img {
 
 // Tablet
 @media screen and (max-width: 1023px) {
+  .hide-on-mobile-tablet {
+    display: none !important;
+  }
   .banner {
     padding-top: 5rem;
     padding-bottom: 5rem;

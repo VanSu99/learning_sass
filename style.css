@@ -25,6 +25,15 @@ img {
   max-width: 100%;
 }
 
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -432,6 +441,10 @@ img {
 }
 
 @media screen and (max-width: 1023px) {
+  .hide-on-mobile-tablet {
+    display: none !important;
+  }
+
   .banner {
     padding-top: 5rem;
     padding-bottom: 5rem;
